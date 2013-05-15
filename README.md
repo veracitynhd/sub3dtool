@@ -9,8 +9,11 @@ Basic Usage
 ===========
 
 To convert a subtitle to Side-by-Side
-	./sub3dtool input.srt --3dsbs -o output.ass
+
+	sub3dtool input.srt --3dsbs -o output.ass
 
 Whereas **input.srt** is the path to the file you need to convert.
+
 **output.ass** is the name of the file you want as the result.
+
 **--3dsbs** indicates that you want to convert the subtitle to 3DSBS (Side-by-Side) format. 
