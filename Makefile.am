@@ -1,0 +1,3 @@
+SUBDIRS = src
+EXTRA_DIST = ChangeLog AUTHOUR README.md LICENSE.md
+

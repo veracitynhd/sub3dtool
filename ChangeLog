@@ -1,0 +1,8 @@
+sub3dtool-0.4
+  - Support for UTF-16 and UTF-32.
+  - Partial SSA/ASS input format support.
+  - SRT output module.
+  - 2 way conversion between SRT and ASS.
+  - Reverse 3D-converted subtitles with --no3d option.
+  - Bugfixes.
+
