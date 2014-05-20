@@ -27,6 +27,7 @@ For Development
 ===============
 
 after clone run:
+
 	automake -a -c
 	./configure
 	make install
