@@ -5,6 +5,16 @@ A simple 3D subtitles convert, convert SRT to ASS format, work well with MPlayer
 
 This tool is made for GNU/Linux but is reportedly working fine with OS X (previously known as Mac OS X).
 
+Installing
+==========
+
+Download last source and run
+
+	tar -xf sub3dtool-0.4.3.tar.gz
+	./configure
+	sudo make install
+
+
 Basic Usage
 ===========
 
