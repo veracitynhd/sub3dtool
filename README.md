@@ -17,3 +17,15 @@ Whereas **input.srt** is the path to the file you need to convert.
 **output.ass** is the name of the file you want as the result.
 
 **--3dsbs** indicates that you want to convert the subtitle to 3DSBS (Side-by-Side) format. 
+
+
+For Development
+===============
+
+	after clone run:
+		automake -a -c
+		./configure
+		make install
+		make dist (generate a zip for distribution)
+
+
