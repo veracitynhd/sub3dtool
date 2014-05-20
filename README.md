@@ -10,7 +10,7 @@ Basic Usage
 
 To convert a subtitle to Side-by-Side
 
-	sub3dtool input.srt --3dsbs -o output.ass
+	sub3dtool input.srt --3dsbs --depth 3 -o output.ass
 
 Whereas **input.srt** is the path to the file you need to convert.
 
@@ -18,14 +18,18 @@ Whereas **input.srt** is the path to the file you need to convert.
 
 **--3dsbs** indicates that you want to convert the subtitle to 3DSBS (Side-by-Side) format. 
 
+**--3dsbs** indicates that you want to convert the subtitle to 3DSBS (Side-by-Side) format. 
+
+**--depth** is the depth of the legend in relation to screen. use values between -10 and 10. Default: 1
+
 
 For Development
 ===============
 
-	after clone run:
-		automake -a -c
-		./configure
-		make install
-		make dist (generate a zip for distribution)
+after clone run:
+	automake -a -c
+	./configure
+	make install
+	make dist (generate a zip for distribution)
 
 
