@@ -59,6 +59,10 @@ void print_help (FILE * f, int code)
 	fprintf (f, "  -o    --output FILE      Output file, support SRT and ASS format\n"); 
 	fprintf (f, "                           Output format is determine by extension\n");
 	fprintf (f, "                           Default is to use ASS subtitle format\n");
+	fprintf (f, "  -d    --depth N          Depth of subtitle on screen. Default is 1.\n"); 
+	fprintf (f, "                           Set negative numbers for subtitle enter screen.\n"); 
+	fprintf (f, "                           Set positive numbers for subtitle get out screen.\n"); 
+	fprintf (f, "                           Set 0 for subtitle on same screen plan.\n");
 	fprintf (f, "        --debug            Self-test.\n");
 	fprintf (f, "\n3D options:\n");
 	fprintf (f, "        --3dsbs            Side-By-Side subtitle\n");
@@ -177,13 +181,14 @@ int main (int argc, char * argv[])
 	long margin_l = LONG_MIN;
 	long margin_r = LONG_MIN;
 	long margin_v = LONG_MIN;
+	long depth = LONG_MIN;
 	long screen_x = -1;
 	long screen_y = -1;
 	char * ptr;
 	long znsub_srt2ass_flag = 0;
 	int	 align_adjust = -1;
 
-	const char * opts_short = "ho:c:";
+	const char * opts_short = "ho:c:d:";
 	const struct option opts_long [] = {
 		{ "help",			0, NULL, 'h' },
 		{ "output", 		1, NULL, 'o' },
@@ -210,6 +215,7 @@ int main (int argc, char * argv[])
 		{ "margin-left",	1, NULL, 1061 },
 		{ "margin-right",	1, NULL, 1062 },
 		{ "margin-vertical", 1, NULL, 1063 },
+		{ "depth", 1, NULL, 'd'},
 		{ "3dsbs",	0, &sub3d,	ZNSUB_ASS3D_SBS },
 		{ "3dtb",	0, &sub3d,	ZNSUB_ASS3D_TB },
 		{ "no3d",	0, &sub3d,	ZNSUB_ASS3D_NO3D },
@@ -220,6 +226,9 @@ int main (int argc, char * argv[])
 		opt = getopt_long (argc, argv, opts_short, opts_long, NULL);
 		switch (opt)
 		{
+		case 'd':
+			depth = strtol (optarg, NULL, 0);
+			break;
 		case 'h':
 			print_help (stdout, 0);
 			break;
@@ -486,6 +495,8 @@ int main (int argc, char * argv[])
 				style->margin_r);
 		style->margin_v = (margin_v != LONG_MIN ? margin_v :
 				style->margin_v);
+
+		style->depth = (depth != LONG_MIN ? depth : style->depth);
 
 
 		/* convert to 3d */

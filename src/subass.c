@@ -62,6 +62,8 @@ ZnsubASSStyle * znsub_ass_style_new ()
 	style->margin_l = 10;
 	style->margin_r = 10;
 	style->margin_v = 0;
+	style->depth = 1;
+	style->depth = 1;
 	style->id = 0;
 	style->next = NULL;
 	return style;
@@ -616,6 +618,9 @@ void znsub_ass_parse_styles (ZnsubASS * sub, ZnFile * file)
 						break;
 					case 16:
 						style->margin_v = strtol (ptr, NULL, 0);
+						break;
+					case 17:
+						style->depth = strtol (ptr, NULL, 0);	
 						break;
 					default:
 						break;
