@@ -1,0 +1,12 @@
+*.o
+
+.deps
+
+*.log
+*.status
+*.cache
+Makefile
+
+src/stamp-h1
+src/config.h.in~
+src/sub3dtool
