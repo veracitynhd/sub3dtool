@@ -44,6 +44,7 @@ typedef struct _znsubassstyle_ {
 	long margin_l;
 	long margin_r;
 	long margin_v;
+	long depth;
 	struct _znsubassstyle_ * next;
 } ZnsubASSStyle;
 

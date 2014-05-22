@@ -78,9 +78,9 @@ int znsub_ass3d_convert (ZnsubASS * sub, int mode, unsigned long flag)
 		else
 		{
 			ns->margin_l = ns->margin_l/2 + margin;
-			ns->margin_r = ns->margin_r/2;
+			ns->margin_r = ns->margin_r/2 + (ls->depth * 10);
 			ls->margin_r = ls->margin_r/2 + margin;
-			ls->margin_l = ls->margin_l/2;
+			ls->margin_l = ls->margin_l/2 + (ls->depth * 10);
 			ns->scale_x /= 2;
 			ls->scale_x /= 2;
 		}
